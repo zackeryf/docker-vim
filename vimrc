@@ -40,7 +40,7 @@ set hlsearch
 " enable highlighting while typing search
 set incsearch
 
-" Show the tab line at the top of vim window
+" Show the status line, in this context its needed for the lightline plugin
 set laststatus=2
 
 " Only redraw when we need to
