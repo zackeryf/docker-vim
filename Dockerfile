@@ -4,14 +4,10 @@ FROM ubuntu:18.04
 RUN apt-get update && \
     # Git is needed for the vim plugin manager
     apt-get -y install git && \
-    # Install locals
-    apt-get install -y locales && \
     # The star application
     apt-get -y install vim && \
     # We need curl to easily install the plugin manager
     apt-get -y install curl
-# Set the local to utf-8
-RUN rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 ENV LANG en_US.utf8
 # Setup the terminal to use color
 ENV TERM=xterm-256color
