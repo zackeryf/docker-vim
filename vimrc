@@ -18,7 +18,6 @@ set tabstop=4 shiftwidth=4 expandtab
 " 2. :PlugClean
 call plug#begin()
 Plug 'scrooloose/nerdtree'
-Plug 'vim-scripts/bash-support.vim'
 Plug 'itchyny/lightline.vim'
 call plug#end()
 
@@ -42,12 +41,10 @@ set hlsearch
 set incsearch
 
 " Show the tab line at the top of vim window
-"set laststatus=2
+set laststatus=2
 
 " Only redraw when we need to
 set lazyredraw
 
 " Set the number of columns before word wrapping
 set textwidth=120
-
-set laststatus=2
