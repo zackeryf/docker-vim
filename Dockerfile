@@ -20,10 +20,15 @@ ENV DISPLAY=:0
 # Install the plugin manager
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Create a directory to map to external host
+RUN mkdir /root/documents
+# Create a mountpoint
+VOLUME ["/root/documents"]
 # Change the working dir
-WORKDIR /root
+WORKDIR /root/documents
 # For now copy in the vimrc to /root/.vimrc
 COPY vimrc .vimrc
 # Now configure vim by running the pluging manager and quitting vim
 RUN vim --not-a-term -c "PlugInstall" -c "qa"
+# Start vim
 ENTRYPOINT ["vim", "--not-a-term"]
