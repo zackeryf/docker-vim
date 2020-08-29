@@ -26,3 +26,4 @@ WORKDIR /root
 COPY vimrc .vimrc
 # Now configure vim by running the pluging manager and quitting vim
 RUN vim --not-a-term -c "PlugInstall" -c "qa"
+ENTRYPOINT ["vim", "--not-a-term"]
