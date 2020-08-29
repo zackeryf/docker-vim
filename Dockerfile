@@ -15,8 +15,6 @@ RUN rm -rf /var/lib/apt/lists/* && localedef -i en_US -c -f UTF-8 -A /usr/share/
 ENV LANG en_US.utf8
 # Setup the terminal to use color
 ENV TERM=xterm-256color
-# Set the display variable to 0, the primary display
-ENV DISPLAY=:0
 # Install the plugin manager
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
