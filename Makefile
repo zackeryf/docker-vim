@@ -1,2 +1,2 @@
 build:
-	docker build -t dvim .
+	docker build -t docker-vim:latest .
