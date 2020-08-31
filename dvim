@@ -1,3 +1,6 @@
 #!/bin/bash
 
-docker container run -it --mount type=bind,source="$(pwd)",destination=/root/documents dvim:latest $@
+docker container run -it \
+    --mount type=bind,source="$(pwd)",destination=/root/documents \
+    --user $(id -u ${USER}):$(id -g ${USER}) \
+    dvim:latest $@
