@@ -26,9 +26,7 @@ COPY vimrc /home/${user_name}/.vimrc
 # Now configure vim by running the pluging manager and quitting vim
 RUN vim --not-a-term -c "PlugInstall" -c "qa"
 # Create a directory to map to external host
-RUN mkdir -v documents
-# Create a mountpoint
-#VOLUME ["documents"]
+VOLUME /home/${user_name}/documents
 # Change the working dir
 WORKDIR /home/${user_name}/documents
 # Start vim
