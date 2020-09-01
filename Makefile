@@ -1,4 +1,4 @@
-build:
-	docker build -t docker-vim:latest .
+build-vim:
+	scripts/build
 install:
 	cp dvim ~/bin
