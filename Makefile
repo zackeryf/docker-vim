@@ -1,4 +1,4 @@
 build-vim:
 	scripts/build
 install:
-	cp dvim ~/bin
+	cp dvim /usr/local/bin
