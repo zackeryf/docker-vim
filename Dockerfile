@@ -30,4 +30,4 @@ VOLUME /home/${user_name}/documents
 # Change the working dir
 WORKDIR /home/${user_name}/documents
 # Start vim
-ENTRYPOINT ["vim", "--not-a-term"]
+ENTRYPOINT ["vim"]
