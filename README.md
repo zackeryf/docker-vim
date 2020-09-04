@@ -21,6 +21,8 @@ container run command below passing in the fileneme.
 Using the dvim script:  
 `<path to docker-vim>/scripts/dvim <filename>`
 
+OR
+
 Using the docker run command:  
 `docker container run -it --mount type=bind,source="$(pwd)",destination="${HOME}/documents" docker-vim:latest $@`
 
@@ -29,7 +31,7 @@ To make it easier to execute you can create an alias to the dvim script so in yo
 script to /user/local/bin or some other directory in your PATH. There is a Makefile target that will copy dvim to
 /usr/local/bin for you, note you will probably need to use sudo when executing the make target.
 
-'make install'
+`make install`
 
 ## Gotchas
 When the container is run it will get the corrent working directory and it will bind mount that directory into the
