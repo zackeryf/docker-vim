@@ -6,22 +6,22 @@ It is required to build the docker container as the user that the container will
 the current user and create a user with the same name and ID in the container. This is needed so that the document
 ownership will be the same as the user. If this is not done when the files are saved they will be owned by root.
 
-Build via Makefile:
-`make build-vim`
+Build via Makefile:  
+`make build-vim`  
 
 OR
 
-Docker build command:
+Docker build command:  
 `docker build --build-arg user_name="$(id --user --name)" --build-arg user_id="$(id --user)" -t docker-vim:latest .`
 
 ## To Run
 To run the container cd to the top directory that has the files you wish to edit, and use the provided script called dvim and pass in the filename as the argument or issue the docker
 container run command below passing in the fileneme.
 
-Using the dvim script:
+Using the dvim script:  
 `<path to docker-vim>/scripts/dvim <filename>`
 
-Using the docker run command:
+Using the docker run command:  
 `docker container run -it --mount type=bind,source="$(pwd)",destination="${HOME}/documents" docker-vim:latest $@`
 
 ## Create an alias or install
@@ -50,16 +50,16 @@ case you will need to install the powerline fonts in the container by modifying 
 vimrc along with any configuration that the plugin requires, then build, and run.
 
 ## Reference
-NERDTree:
-https://vimawesome.com/plugin/nerdtree-red
+NERDTree:  
+https://vimawesome.com/plugin/nerdtree-red  
 https://github.com/preservim/nerdtree
 
-Lightline:
-https://vimawesome.com/plugin/lightline-vim
+Lightline:  
+https://vimawesome.com/plugin/lightline-vim  
 https://github.com/itchyny/lightline.vim
 
-Vim-plug:
+Vim-plug:  
 https://github.com/junegunn/vim-plug
 
-Dockerfile:
+Dockerfile:  
 https://docs.docker.com/engine/reference/builder/
