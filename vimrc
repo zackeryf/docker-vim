@@ -3,6 +3,11 @@ filetype plugin on
 " set tabwidth to 4 and use spaces
 set tabstop=4 shiftwidth=4 expandtab
 
+" Set up colors of the gui isn't running
+if !has('gui_running')
+  set t_Co=256
+endif
+
 " This is using vim-plug to manage plugins
 " https://github.com/junegunn/vim-plug
 " To install:
@@ -18,7 +23,7 @@ set tabstop=4 shiftwidth=4 expandtab
 " 2. :PlugClean
 call plug#begin()
 Plug 'scrooloose/nerdtree'
-Plug 'itchyny/lightline.vim'
+" Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " Turn off the error and visual bell
@@ -41,10 +46,10 @@ set hlsearch
 set incsearch
 
 " Show the status line, in this context its needed for the lightline plugin
-set laststatus=2
+set laststatus=0
 
 " Only redraw when we need to
-set lazyredraw
+" set lazyredraw
 
 " Set the number of columns before word wrapping
 set textwidth=120

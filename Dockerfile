@@ -1,15 +1,17 @@
 FROM ubuntu:18.04
-
+# Setup the terminal to use color
+ENV TERM=xterm-256color
+# Set the timezone
+ENV TZ=America/Denver
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 # First we need to do a update before installing anything so that apt can find them
 RUN apt-get update && \
     # Git is needed for the vim plugin manager
     apt-get -y install git && \
     # The star application
-    apt-get -y install vim && \
+    apt-get -y install vim-gtk && \
     # We need curl to easily install the plugin manager
     apt-get -y install curl
-# Setup the terminal to use color
-ENV TERM=xterm-256color
 # Create a user account in the docker container that is based on the account of the executor
 # This will be dependent on the docker build command passing in the user_name and user_id that
 # the container will be executed as.
@@ -30,4 +32,4 @@ VOLUME /home/${user_name}/documents
 # Change the working dir
 WORKDIR /home/${user_name}/documents
 # Start vim
-ENTRYPOINT ["vim"]
+ENTRYPOINT ["gvim"]
