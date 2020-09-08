@@ -1,5 +1,5 @@
 ## Goal
-Set up a development environment in a docker container so that it can be easily deployed on any computer that can run docker containers.
+Set up a simple customized vim environment in a docker container so that it can be easily deployed on any computer that can run docker containers.
 
 ## Build
 It is required to build the docker container as the user that the container will be run as. The build process will get
